@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Anti-Bold",
+    "description": "Anti-Bold",
+    "version": "0.2.6",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "jquery-3.4.1.min.js",
+                "face-api.js",
+                "anti_bold.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        "*"
+    ]
+}
