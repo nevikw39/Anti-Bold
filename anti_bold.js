@@ -5,11 +5,10 @@
         faceapi.nets.faceLandmark68Net.loadFromUri(chrome.runtime.getURL("/models/")),
         faceapi.nets.ssdMobilenetv1.loadFromUri(chrome.runtime.getURL("/models/"))
     ]).then(async () => {
-        console.log("    _          _   _       ____        _     _\n   / \\   _ __ | |_(_)     | __ )  ___ | | __| |\n  / _ \\ | '_ \\| __| |_____|  _ \\ / _ \\| |/ _` |\n / ___ \\| | | | |_| |_____| |_) | (_) | | (_| |\n/_/   \\_\\_| |_|\\__|_|     |____/ \\___/|_|\\__,_|");
-        jQuery.noConflict();
+        console.log("%c    _          _   _       ____        _     _ \n   / \\   _ __ | |_(_)     | __ )  ___ | | __| |\n  / _ \\ | '_ \\| __| |_____|  _ \\ / _ \\| |/ _` |\n / ___ \\| | | | |_| |_____| |_) | (_) | | (_| |\n/_/   \\_\\_| |_|\\__|_|     |____/ \\___/|_|\\__,_|", "background-color: #198964; color: white; font-weight: bold; /* XD */");
         let mo = new MutationObserver(_ => {
-            jQuery("img").each(async (_, i) => {
-                const j = jQuery(i);
+            $("img").each(async (_, i) => {
+                const j = $(i);
                 if (j.data("Anti-Bold") !== undefined)
                     return;
                 if (i.complete && i.naturalHeight !== 0)
@@ -20,15 +19,13 @@
     }).catch(err => console.log(err));
     async function f(x) {
         document.body.style.cursor = "wait";
-        const j = jQuery(x);
-        j
-            .data("Anti-Bold", true).wrap(`<div style="position: relative; display: block; margin: 0px auto;">`).css("margin-left", "0px").css("margin-right", "0px")
-            .after(`<canvas style="position: absolute; top: 0px; left: 0px; width: ${j.width()}px; height: ${j.height()}px; padding-top: ${j.css("padding-top")}; margin-top: ${j.css("margin-top")};">`);
+        const j = $(x);
+        j.data("Anti-Bold", true).wrap(`<div style="position: relative; display: block; margin: 0px auto;">`).css("margin-left", "0px").css("margin-right", "0px")
+            .after(`<canvas style="position: absolute; top: 0px; left: 0px; padding-top: ${j.css("padding-top")}; margin-top: ${j.css("margin-top")};">`);
         const cv = x.nextSibling;
         const dts = await faceapi.detectAllFaces(await faceapi.fetchImage(x.src)).withFaceLandmarks().withFaceDescriptors();
         const size = { width: j.width(), height: j.height() };
         const rr = faceapi.resizeResults(dts, size);
-        for (i in cv) { if (/^on/.test(i)) { jQuery(cv).on(i.slice(2), () => jQuery(x).trigger(i.slice(2))); } }
         faceapi.matchDimensions(cv, size);
         faceapi.draw.drawDetections(cv, rr);
         rr.forEach(i => {
