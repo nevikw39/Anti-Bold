@@ -13,6 +13,8 @@ Chrome 擴充套件。覆蓋所有噁心ㄉ「禿子」的臉。
 
 使用 justadudewhohacks/face-api.js、SSD Mobilenet V1。
 
+目前標靶樣本數僅 20。
+
 建議配備獨立顯卡。
 ### 安裝方法
 1. 下載 zip 檔
