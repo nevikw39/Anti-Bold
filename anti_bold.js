@@ -10,7 +10,7 @@
         let mo = new MutationObserver(_ => {
             jQuery("img").each(async (_, i) => {
                 const j = jQuery(i);
-                if (j.data("Anti-Bold") != undefined)
+                if (j.data("Anti-Bold") !== undefined)
                     return;
                 if (i.complete && i.naturalHeight !== 0)
                     f(i);
@@ -19,7 +19,7 @@
         mo.observe(document, { subtree: true, childList: true, attributes: true });
     }).catch(err => console.log(err));
     async function f(x) {
-        x.crossOrigin = "";
+        document.body.style.cursor = "wait";
         const j = jQuery(x);
         j
             .data("Anti-Bold", true).wrap(`<div style="position: relative; display: block; margin: 0px auto;>`).css("margin-left", "0px").css("margin-right", "0px")
@@ -27,17 +27,22 @@
         const cv = x.nextSibling;
         const dts = await faceapi.detectAllFaces(await faceapi.fetchImage(x.src)).withFaceLandmarks().withFaceDescriptors();
         const size = { width: j.width(), height: j.height() };
-        const rd = faceapi.resizeResults(dts, size);
+        const rr = faceapi.resizeResults(dts, size);
+        for (i in cv) { if (/^on/.test(i)) { jQuery(cv).on(i.slice(2), () => jQuery(x).trigger(i.slice(2))); } }
         faceapi.matchDimensions(cv, size);
-        faceapi.draw.drawDetections(cv, rd);
-        dts.forEach(i => {
+        faceapi.draw.drawDetections(cv, rr);
+        rr.forEach(i => {
             const result = match.findBestMatch(i.descriptor);
-            if (result.distance < 0.55) {
+            j.data("Anti-Bold", j.data("Anti-Bold") + result.distance);
+            console.debug(x, result.toString());
+            if (result.label == "bold") {
+                x.title = result.distance;
                 const box = i.detection.box;
                 const ctx = cv.getContext("2d");
                 ctx.fillStyle = "#198964E0";
                 ctx.fillRect(box.x, box.y, box.width, box.height);
             }
         });
+        document.body.style.cursor = "default";
     }
 })();
