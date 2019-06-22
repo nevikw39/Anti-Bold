@@ -22,7 +22,7 @@
         document.body.style.cursor = "wait";
         const j = jQuery(x);
         j
-            .data("Anti-Bold", true).wrap(`<div style="position: relative; display: block; margin: 0px auto;>`).css("margin-left", "0px").css("margin-right", "0px")
+            .data("Anti-Bold", true).wrap(`<div style="position: relative; display: block; margin: 0px auto;">`).css("margin-left", "0px").css("margin-right", "0px")
             .after(`<canvas style="position: absolute; top: 0px; left: 0px; width: ${j.width()}px; height: ${j.height()}px; padding-top: ${j.css("padding-top")}; margin-top: ${j.css("margin-top")};">`);
         const cv = x.nextSibling;
         const dts = await faceapi.detectAllFaces(await faceapi.fetchImage(x.src)).withFaceLandmarks().withFaceDescriptors();
