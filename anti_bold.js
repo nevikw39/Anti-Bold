@@ -20,7 +20,7 @@
     async function f(x) {
         document.body.style.cursor = "wait";
         const j = $(x);
-        j.data("Anti-Bold", true).wrap(`<div style="position: relative; width: ${j.width() + "px"}; height: ${j.height() + "px"}; margin: 0px auto;">`).css("margin-left", "0px").css("margin-right", "0px")
+        j.data("Anti-Bold", true).wrap(`<div style="position: relative; display: inline-block; width: ${j.width() + "px"}; height: ${j.height() + "px"}; margin: 0px auto;">`).css("margin-left", "0px").css("margin-right", "0px")
             .after(`<canvas style="position: absolute; top: 0px; left: 0px; padding-top: ${j.css("padding-top")}; margin-top: ${j.css("margin-top")};">`);
         const cv = x.nextSibling;
         const dts = await faceapi.detectAllFaces(await faceapi.fetchImage(x.src)).withFaceLandmarks().withFaceDescriptors();

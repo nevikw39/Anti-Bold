@@ -22,7 +22,7 @@ Chrome 擴充套件。覆蓋所有噁心ㄉ「__禿子__」的臉。
 建議配備 _獨立顯卡_。
 ### 安裝方法
 1. 下載 zip 檔
-    * [GitHub](https://github.com/nevikw39/Anti-Bold/archive/master.zip "從 GitHub 下載")
+    * [GitHub](https://github.com/nevikw39/Anti-Bold/archive/master.zip "從 GitHub 下載") （最新版）
     * [Google Drive](https://drive.google.com/uc?export=download&id=1rrMlMW4qeablWrtXqguEd0jUsQZ7JqF2 "從 Google Drive 下載")
 2. 解壓縮至任意目錄
 3. ... ⮕ 更多工具 ⮕ 擴充功能 ⮕ 開發人員模式

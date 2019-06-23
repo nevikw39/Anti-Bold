@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Anti-Bold",
     "description": "Anti-Bold",
-    "version": "0.2.7",
+    "version": "0.2.8",
     "version_name": "alpha_duo",
     "content_scripts": [
         {
