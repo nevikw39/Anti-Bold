@@ -5,7 +5,7 @@
  / ___ \| | | | |_| |_____| |_) | (_) | | (_| |
 /_/   \_\_| |_|\__|_|     |____/ \___/|_|\__,_|
 ```
-# 我們與禿的距離
+# 真 • ㊣ ㊙ 煞氣 🅐 禿包河蟹神器 • 卍
 ## 𝕬𝖓𝖙𝖎-𝕭𝖔𝖑𝖉 𝓪𝓵𝓹𝓱𝓪 🅳 🅄 🅾
 [官網](https://www.kevinweng.tk/ab/ "前往官網")
 
@@ -25,7 +25,7 @@ Chrome 擴充套件。覆蓋所有噁心ㄉ「__禿子__」的臉。
     * [GitHub](https://github.com/nevikw39/Anti-Bold/archive/master.zip "從 GitHub 下載") （最新版）
     * [Google Drive](https://drive.google.com/uc?export=download&id=1rrMlMW4qeablWrtXqguEd0jUsQZ7JqF2 "從 Google Drive 下載")
 2. 解壓縮至任意目錄
-3. ... ⮕ 更多工具 ⮕ 擴充功能 ⮕ 開發人員模式
+3. __&nbsp;⋮&nbsp;__ ⮕ 更多工具 ⮕ 擴充功能 ⮕ 開發人員模式
 4. 載入未封裝項目
 5. _Bang!_
 ### 贊助發大財
