@@ -16,6 +16,10 @@
             ]
         }
     ],
+    "browser_action": {
+        "default_title": "Anti-Bold\n真 • ㊣ ㊙ 煞氣 🅐 禿包河蟹神器 • 卍",
+        "default_popup": "popup.html"
+    },
     "web_accessible_resources": [
         "*"
     ]
