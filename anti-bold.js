@@ -11,7 +11,7 @@
                 const j = $(i);
                 if (j.data("Anti-Bold") !== undefined)
                     return;
-                if (i.complete && i.naturalHeight !== 0)
+                if (i.complete && i.width != 0 && i.height != 0)
                     f(i);
             });
         });
@@ -19,6 +19,8 @@
     }).catch(err => console.log(err));
     async function f(x) {
         document.body.style.cursor = "wait";
+        if (!x.width || !x.height)
+            return;
         const j = $(x);
         j.data("Anti-Bold", true).wrap(`<div style="position: relative; display: inline-block; width: ${j.width() + "px"}; height: ${j.height() + "px"}; margin: 0px auto;">`).css("margin-left", "0px").css("margin-right", "0px")
             .after(`<canvas style="position: absolute; top: 0px; left: 0px; padding-top: ${j.css("padding-top")}; margin-top: ${j.css("margin-top")};">`);
@@ -26,8 +28,6 @@
         const dts = await faceapi.detectAllFaces(await faceapi.fetchImage(x.src)).withFaceLandmarks().withFaceDescriptors();
         const size = { width: j.width(), height: j.height() };
         const rr = faceapi.resizeResults(dts, size);
-        if (!size.width || !size.height)
-            return;
         faceapi.matchDimensions(cv, size);
         // faceapi.draw.drawDetections(cv, rr);
         rr.forEach(i => {
