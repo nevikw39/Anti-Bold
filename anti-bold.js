@@ -26,6 +26,8 @@
         const dts = await faceapi.detectAllFaces(await faceapi.fetchImage(x.src)).withFaceLandmarks().withFaceDescriptors();
         const size = { width: j.width(), height: j.height() };
         const rr = faceapi.resizeResults(dts, size);
+        if (!size.width || !size.height)
+            return;
         faceapi.matchDimensions(cv, size);
         // faceapi.draw.drawDetections(cv, rr);
         rr.forEach(i => {
@@ -36,7 +38,7 @@
                 x.title = result.distance;
                 const box = i.detection.box;
                 const ctx = cv.getContext("2d");
-                ctx.fillStyle = "#198964E0";
+                ctx.fillStyle = "#198964";
                 ctx.fillRect(box.x, box.y, box.width, box.height);
             }
         });
