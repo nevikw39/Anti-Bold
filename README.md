@@ -25,7 +25,7 @@ Chrome 擴充功能。覆蓋所有噁心ㄉ「__禿子__」的臉。
     * [GitHub](https://github.com/nevikw39/Anti-Bold/archive/master.zip "從 GitHub 下載") （最新版）
     * [Google Drive](https://drive.google.com/uc?export=download&id=1rrMlMW4qeablWrtXqguEd0jUsQZ7JqF2 "從 Google Drive 下載")
 2. 解壓縮至任意目錄
-3. __&nbsp;⋮&nbsp;__ ⮕ 更多工具 ⮕ 擴充功能 ⮕ 開發人員模式
+3. __&nbsp;⋮&nbsp;__ ➡️ 更多工具 ➡️ 擴充功能 ➡️ 開發人員模式
 4. 載入未封裝項目
 5. _Bang!_
 ## 版本歷史
@@ -34,12 +34,12 @@ Chrome 擴充功能。覆蓋所有噁心ㄉ「__禿子__」的臉。
 ### 𝓪𝓵𝓹𝓱𝓪 🅄 🅽 🄾
 * userscript 型態，失敗。
 ## 未來目標
-* 韓粉模式
-* 統計圖表
-* 白名單
-* 社群回報系統
-* __發大財__
-* __征服宇宙__
+* ❎ 韓粉模式
+* ❎ 統計圖表
+* ❎ 白名單
+* ❎ 社群回報系統
+* ❎ __發大財__
+* ❎ __征服宇宙__
 ## 贊助發大財
 ### 個人門羅幣地址
 _4Akr7dQmYJEV8kyXtEUnd3LWG7HjF3sWd4VpL6jDwLePDQHNwAP4HmZF2hm6AUM6Uy8xuq74b5yhBVU3V2KSuk64DyZUxmx_
