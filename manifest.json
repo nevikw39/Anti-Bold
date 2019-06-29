@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "Anti-Bold",
-    "description": "Anti-Bold",
-    "version": "0.2.8",
+    "description": "真 • ㊣ ㊙ 煞氣 🅐 禿包河蟹神器 • 卍",
+    "version": "0.2.10",
     "version_name": "alpha_duo",
     "content_scripts": [
         {
@@ -12,7 +12,7 @@
             "js": [
                 "jquery-3.4.1.min.js",
                 "face-api.js",
-                "anti_bold.js"
+                "anti-bold.js"
             ]
         }
     ],
