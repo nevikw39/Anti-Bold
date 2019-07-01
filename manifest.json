@@ -2,8 +2,14 @@
     "manifest_version": 2,
     "name": "Anti-Bold",
     "description": "真 • ㊣ ㊙ 煞氣 🅐 禿包河蟹神器 • 卍",
-    "version": "0.2.10",
-    "version_name": "alpha_duo",
+    "version": "0.3.2",
+    "version_name": "alpha_tri",
+    "background": {
+        "scripts": [
+            "bg.js"
+        ],
+        "persistent": false
+    },
     "content_scripts": [
         {
             "matches": [
@@ -20,6 +26,9 @@
         "default_title": "Anti-Bold\n真 • ㊣ ㊙ 煞氣 🅐 禿包河蟹神器 • 卍",
         "default_popup": "popup.html"
     },
+    "permissions": [
+        "storage"
+    ],
     "web_accessible_resources": [
         "*"
     ]
