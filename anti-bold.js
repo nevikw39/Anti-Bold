@@ -14,13 +14,11 @@
         faceapi.nets.ssdMobilenetv1.loadFromUri(chrome.runtime.getURL("/models/"))
     ]).then(_ => {
         foo();
-        let mo = new MutationObserver(_ => foo());
-        mo.observe(document.body, { subtree: true, childList: true });
+        $(document).scroll(_ => foo());
     });
     function foo() {
         $("img").each(async (_, i) => {
-            const j = $(i);
-            if (j.data("Anti-Bold") !== undefined)
+            if (i.dataset.anti_bold != undefined)
                 return;
             if (i.complete && i.naturalWidth)
                 bar(i);
@@ -32,14 +30,15 @@
         const dts = await faceapi.detectAllFaces(await faceapi.fetchImage(x.src)).withFaceLandmarks().withFaceDescriptors();
         const size = { width: j.width(), height: j.height() };
         const rr = faceapi.resizeResults(dts, size);
-        j.data("Anti-Bold", false);
+        x.dataset.anti_bold = "non";
         rr.forEach(i => {
             const result = match.findBestMatch(i.descriptor);
             if (result.label == "bold") {
                 console.debug(x, result.distance);
-                if (!j.data("Anti-Bold"))
-                    j.wrap(`<div style="position: relative; display: inline-block; width: ${j.width() + "px"}; height: ${j.height() + "px"}; margin: 0px auto;">`).css("margin-left", "0px").css("margin-right", "0px")
-                        .after(`<canvas class="anti-bold" style="position: absolute; top: 0px; left: 0px; padding-top: ${j.css("padding-top")}; margin-top: ${j.css("margin-top")};">`);
+                if (!x.nextSibling || x.nextSibling.tagName != "CANVAS")
+                    j.wrap(`<div style="position: relative; width: ${j.width() + "px"}; height: ${j.height() + "px"};  margin-top: ${j.css("margin-top")}; margin-left: ${j.css("margin-left")}; margin-right: ${j.css("margin-right")};">`)
+                        .after(`<canvas class="anti-bold" style="position: absolute; top: 0px; left: 0px; margin-top: ${j.css("margin-top")}; margin-left: ${j.css("margin-left")}; margin-right: ${j.css("margin-right")};">`);
+                x.dataset.anti_bold = "bold";
                 const cv = x.nextSibling;
                 const box = i.detection.box;
                 const ctx = cv.getContext("2d");
@@ -53,7 +52,6 @@
                     ctx.strokeStyle = "#F0E87D";
                     ctx.strokeRect(box.x, box.y, box.width, box.height);
                 }
-                j.data("Anti-Bold", true);
             }
         });
         document.body.style.cursor = "default";

@@ -32,16 +32,19 @@ Chrome 擴充功能。覆蓋所有噁心ㄉ「__禿子__」的臉。
 ### 𝓪𝓵𝓹𝓱𝓪 🅃 🆁 🄸
 * 加入選單
 * 加入韓粉模式
+* 效能優化
 ### 𝓪𝓵𝓹𝓱𝓪 🅳 🅄 🅾
 * 早期開發版。
 ### 𝓪𝓵𝓹𝓱𝓪 🅄 🅽 🄾
 * userscript 型態，失敗。
 ## 未來目標
-* ❎ 統計圖表
-* ❎ 白名單
-* ❎ 社群回報系統
-* ❎ __發大財__
-* ❎ __征服宇宙__
+* 統計資料
+* 白名單
+* 社群回報系統
+* 提供 TinyFaceDetecter 選項
+* 引入原生 tensorflow
+* __發大財__
+* __征服宇宙__
 ## 贊助發大財
 ### 個人門羅幣地址
 _4Akr7dQmYJEV8kyXtEUnd3LWG7HjF3sWd4VpL6jDwLePDQHNwAP4HmZF2hm6AUM6Uy8xuq74b5yhBVU3V2KSuk64DyZUxmx_
