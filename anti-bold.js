@@ -37,7 +37,7 @@
         document.body.style.cursor = "wait";
         const j = $(x);
         const size = { width: j.width(), height: j.height() };
-        if (!size.width || !size.height)
+        if (size.width <= 0 || size.height <= 0)
             return;
         const dts = await faceapi.detectAllFaces(await faceapi.fetchImage(x.src)).withFaceLandmarks().withFaceDescriptors();
         const rr = faceapi.resizeResults(dts, size);
