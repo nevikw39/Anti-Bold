@@ -1,12 +1,21 @@
 (async function () {
+    chrome.runtime.onMessage.addListener(request => {
+        if (request.hide) {
+            $("canvas.anti-bold").hide();
+            setTimeout(_ => {
+                $("canvas.anti-bold").show();
+                foo();
+            }, 10000);
+        }
+    });
     console.log("%c    _          _   _       ____        _     _ \n   / \\   _ __ | |_(_)     | __ )  ___ | | __| |\n  / _ \\ | '_ \\| __| |_____|  _ \\ / _ \\| |/ _` |\n / ___ \\| | | | |_| |_____| |_) | (_) | | (_| |\n/_/   \\_\\_| |_|\\__|_|     |____/ \\___/|_|\\__,_|", "background-color: #198964; color: white; font-weight: bold; /* XD */");
     if (!await new Promise(rs => chrome.storage.sync.get(["enable"], val => rs(val.enable))))
         return;
-    let count = 0;
+    let b = 0, n = 0;
     const fill = await new Promise(rs => chrome.storage.sync.get(["fill"], val => rs(val.fill)));
     const match = new faceapi.FaceMatcher([
-        new faceapi.LabeledFaceDescriptors("bold", (await faceapi.fetchJson(chrome.runtime.getURL("/bold.json"))).map(i => new Float32Array(i))),
-        ...(await faceapi.fetchJson(chrome.runtime.getURL("/non.json"))).map(i => new faceapi.LabeledFaceDescriptors(`non ${++count}`, [new Float32Array(i)]))
+        ...(await faceapi.fetchJson(chrome.runtime.getURL("/bold.json"))).map(i => new faceapi.LabeledFaceDescriptors(`bold ${b++}`, [new Float32Array(i)])),
+        ...(await faceapi.fetchJson(chrome.runtime.getURL("/non.json"))).map(i => new faceapi.LabeledFaceDescriptors(`non ${n++}`, [new Float32Array(i)]))
     ], 0.55);
     Promise.all([
         faceapi.nets.faceRecognitionNet.loadFromUri(chrome.runtime.getURL("/models/")),
@@ -27,18 +36,20 @@
     async function bar(x) {
         document.body.style.cursor = "wait";
         const j = $(x);
-        const dts = await faceapi.detectAllFaces(await faceapi.fetchImage(x.src)).withFaceLandmarks().withFaceDescriptors();
         const size = { width: j.width(), height: j.height() };
+        if (!size.width || !size.height)
+            return;
+        const dts = await faceapi.detectAllFaces(await faceapi.fetchImage(x.src)).withFaceLandmarks().withFaceDescriptors();
         const rr = faceapi.resizeResults(dts, size);
         x.dataset.anti_bold = "non";
         rr.forEach(i => {
             const result = match.findBestMatch(i.descriptor);
-            if (result.label == "bold") {
+            if (result.label.slice(0, 4) == "bold") {
                 console.debug(x, result.distance);
                 if (!x.nextSibling || x.nextSibling.tagName != "CANVAS")
-                    j.wrap(`<div style="position: relative; width: ${j.width() + "px"}; height: ${j.height() + "px"};  margin-top: ${j.css("margin-top")}; margin-left: ${j.css("margin-left")}; margin-right: ${j.css("margin-right")};">`)
-                        .after(`<canvas class="anti-bold" style="position: absolute; top: 0px; left: 0px; margin-top: ${j.css("margin-top")}; margin-left: ${j.css("margin-left")}; margin-right: ${j.css("margin-right")};">`);
-                x.dataset.anti_bold = "bold";
+                    j.wrap(`<div style="position: relative; width: ${j.width() + "px"}; height: ${j.height() + "px"}; margin-top: ${j.css("margin-top")}; margin-left: ${j.css("margin-left")}; margin-right: ${j.css("margin-right")};">`)
+                        .after(`<canvas class="anti-bold" style="position: absolute; top: 0px; left: 0px; margin-left: ${j.css("margin-left")}; margin-right: ${j.css("margin-right")};">`);
+                x.dataset.anti_bold = result.label;
                 const cv = x.nextSibling;
                 const box = i.detection.box;
                 const ctx = cv.getContext("2d");
