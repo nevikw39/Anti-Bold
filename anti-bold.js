@@ -16,7 +16,7 @@
     const match = new faceapi.FaceMatcher([
         ...(await faceapi.fetchJson(chrome.runtime.getURL("/bold.json"))).map(i => new faceapi.LabeledFaceDescriptors(`bold ${b++}`, [new Float32Array(i)])),
         ...(await faceapi.fetchJson(chrome.runtime.getURL("/non.json"))).map(i => new faceapi.LabeledFaceDescriptors(`non ${n++}`, [new Float32Array(i)]))
-    ], 0.55);
+    ], 0.5);
     Promise.all([
         faceapi.nets.faceRecognitionNet.loadFromUri(chrome.runtime.getURL("/models/")),
         faceapi.nets.faceLandmark68Net.loadFromUri(chrome.runtime.getURL("/models/")),

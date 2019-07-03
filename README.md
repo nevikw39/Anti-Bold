@@ -13,11 +13,9 @@
 
 Chrome 擴充功能。覆蓋所有噁心ㄉ「__禿子__」的臉。
 
-由於上架到商店有點麻煩，等段考完暑假再說。
-
 使用 _[@justadudewhohacks/face-api.js](https://github.com/justadudewhohacks/face-api.js "face-api.js")_、_SSD Mobilenet V1_。
 
-目前標靶樣本數僅 _60_。
+目前標靶樣本數僅 _60_，若有誤判請多海涵。
 
 請務必打開 __硬體加速__，建議配備 __獨立顯卡__。
 ## 安裝方法
@@ -46,13 +44,13 @@ _userscript_ 型態，失敗。
 * 統計資料
 * 白名單
 * 社群回報系統
-* 提供 _TinyFaceDetecter_、_FaceLandmark68Net_ 選項
+* 提供 _TinyFaceDetecter_、_FaceLandmark68TinyNet_ 選項
 * 引入原生 _tensorflow_
 * __發大財__
 * __征服宇宙__
 ## 贊助發大財
 ### 個人門羅幣地址
 _4Akr7dQmYJEV8kyXtEUnd3LWG7HjF3sWd4VpL6jDwLePDQHNwAP4HmZF2hm6AUM6Uy8xuq74b5yhBVU3V2KSuk64DyZUxmx_
-### 地方的社團需要錢，一中電研社需要您
+### 地方的社團需要錢
 _8A5iyb2PbknGqvgGszBKn4UBWyahCweYtZ7uHQG3deEwHyrwNMdQ4ux5Jh73BSLJHtKwBPazFXam4FR3di8d3ergCEtUSV7_
-> 將以交易時間戳、幣安 XMR/USDT、央行美元對新台幣為準，將捐款以新台幣方式轉交之ˋ社辦，並在[社團 IG](https://www.instagram.com/tcfsh_circ_37th/) 以限時動態感謝
+> 將以交易時間戳、幣安 XMR/USDT、央行美元對新台幣為準，將捐款以新台幣方式轉交社辦，並在[社團 IG](https://www.instagram.com/tcfsh_circ_37th/) 以限時動態感謝

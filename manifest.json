@@ -1,8 +1,9 @@
 {
     "manifest_version": 2,
-    "name": "Anti-Bold",
+    "name": "真•煞氣 🅐 割草機•卍",
+    "short_name": "Anti-Bold",
     "description": "真•煞氣 🅐 割草機•卍",
-    "version": "0.3.2",
+    "version": "0.3.6",
     "version_name": "alpha_tri",
     "background": {
         "scripts": [
@@ -26,6 +27,13 @@
         "hide": {
             "suggested_key": "Ctrl+Shift+H",
             "description": "暫時隱藏所有 canvas"
+        }
+    },
+    "requirements": {
+        "3D": {
+            "features": [
+                "webgl"
+            ]
         }
     },
     "browser_action": {
