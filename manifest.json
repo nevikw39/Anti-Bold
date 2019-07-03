@@ -41,7 +41,8 @@
         "default_popup": "popup.html"
     },
     "permissions": [
-        "storage"
+        "storage",
+        "activeTab"
     ],
     "web_accessible_resources": [
         "*"
