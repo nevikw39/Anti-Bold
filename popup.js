@@ -10,6 +10,7 @@ $("#fill").change(e => {
 });
 $("#enable").change(e => {
     chrome.storage.sync.set({ "enable": e.target.checked });
+    chrome.browserAction.setBadgeText({ text: e.target.checked ? "" : "X" });
     $("#enableLB").text(e.target.checked ? "啟用" : "停用");
     $("#fill").attr("disabled", !e.target.checked);
 });

@@ -16,7 +16,7 @@
     const match = new faceapi.FaceMatcher([
         ...(await faceapi.fetchJson(chrome.runtime.getURL("/bold.json"))).map(i => new faceapi.LabeledFaceDescriptors(`bold ${b++}`, [new Float32Array(i)])),
         ...(await faceapi.fetchJson(chrome.runtime.getURL("/non.json"))).map(i => new faceapi.LabeledFaceDescriptors(`non ${n++}`, [new Float32Array(i)]))
-    ], 0.5);
+    ], 0.45);
     Promise.all([
         faceapi.nets.faceRecognitionNet.loadFromUri(chrome.runtime.getURL("/models/")),
         faceapi.nets.faceLandmark68Net.loadFromUri(chrome.runtime.getURL("/models/")),
@@ -49,7 +49,7 @@
                 if (!x.nextSibling || x.nextSibling.tagName != "CANVAS")
                     j.wrap(`<div style="position: relative; width: ${j.width() + "px"}; height: ${j.height() + "px"}; margin-top: ${j.css("margin-top")}; margin-left: ${j.css("margin-left")}; margin-right: ${j.css("margin-right")};">`)
                         .after(`<canvas class="anti-bold" style="position: absolute; top: 0px; left: 0px; margin-left: ${j.css("margin-left")}; margin-right: ${j.css("margin-right")};">`);
-                x.dataset.anti_bold = result.label;
+                x.dataset.anti_bold = result.toString();
                 const cv = x.nextSibling;
                 const box = i.detection.box;
                 const ctx = cv.getContext("2d");
