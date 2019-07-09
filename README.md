@@ -13,8 +13,6 @@
 
 Chrome 擴充功能。覆蓋所有噁心ㄉ「__禿子__」的臉。
 
-等待 Google 審核中。
-
 使用 _[@justadudewhohacks/face-api.js](https://github.com/justadudewhohacks/face-api.js "face-api.js")_、_SSD Mobilenet V1_。
 
 目前標靶樣本數僅 _60_，若有誤判請多海涵。
