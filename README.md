@@ -21,6 +21,9 @@ Chrome 擴充功能。覆蓋所有噁心ㄉ「__禿子__」的臉。
 
 請務必打開 __硬體加速__，建議配備 __獨立顯卡__。
 ## 安裝方法
+### Chrome Web Store
+[傳送門](https://chrome.google.com/webstore/detail/%E7%9C%9F%E2%80%A2%E7%85%9E%E6%B0%A3-%F0%9F%85%90-%E5%89%B2%E8%8D%89%E6%A9%9F%E2%80%A2%E5%8D%8D/pibolmcicpmnbjjjibaioibonjmijfjo)
+### 開發版
 1. 下載 zip 檔
     * [GitHub](https://github.com/nevikw39/Anti-Bold/archive/master.zip "從 GitHub 下載") （最新版）
     * [Google Drive](https://drive.google.com/uc?export=download&id=1rrMlMW4qeablWrtXqguEd0jUsQZ7JqF2 "從 Google Drive 下載")
