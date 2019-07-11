@@ -12,7 +12,7 @@
 
 ![](https://i.imgur.com/Bn2mfMB.jpg)
 
-Chrome 擴充功能。運用 AI 神經網路技術進行人臉辨識，覆蓋所有噁心ㄉ「__禿子__」的臉。
+Chrome 擴充功能。運用 AI 神經網路技術進行人臉辨識，覆蓋網頁上噁心ㄉ「__禿子__」的臉。
 
 使用 _[@justadudewhohacks/face-api.js](https://github.com/justadudewhohacks/face-api.js "face-api.js")_、_SSD Mobilenet V1_。
 
