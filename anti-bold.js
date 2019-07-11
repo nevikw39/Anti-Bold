@@ -14,8 +14,8 @@
     let b = 0, n = 0;
     const fill = await new Promise(rs => chrome.storage.sync.get(["fill"], val => rs(val.fill)));
     const match = new faceapi.FaceMatcher([
-        ...(await faceapi.fetchJson(chrome.runtime.getURL("/bold.json"))).map(i => new faceapi.LabeledFaceDescriptors(`bold ${b++}`, [new Float32Array(i)])),
-        ...(await faceapi.fetchJson(chrome.runtime.getURL("/non.json"))).map(i => new faceapi.LabeledFaceDescriptors(`non ${n++}`, [new Float32Array(i)]))
+        ...(await new Promise(rs => chrome.storage.local.get(["bold"], val => rs(val.bold)))).map(i => new faceapi.LabeledFaceDescriptors(`bold ${b++}`, [new Float32Array(i)])),
+        ...(await new Promise(rs => chrome.storage.local.get(["non"], val => rs(val.non)))).map(i => new faceapi.LabeledFaceDescriptors(`non ${n++}`, [new Float32Array(i)]))
     ], 0.45);
     Promise.all([
         faceapi.nets.faceRecognitionNet.loadFromUri(chrome.runtime.getURL("/models/")),
