@@ -6,22 +6,23 @@
 /_/   \_\_| |_|\__|_|     |____/ \___/|_|\__,_|
 ```
 # 真 • 煞氣 🅐 割草機 • 卍
+# 目前 Chrome Web Store 上為舊版，新版正等待審核中，欲搶先享受更流暢體驗，還請麻煩手動安裝。
 ## 𝕬𝖓𝖙𝖎-𝕭𝖔𝖑𝖉 𝓫𝓮𝓽𝓪
 [官網](https://www.kevinweng.tk/ab/ "前往官網")
 
 ![](https://i.imgur.com/Bn2mfMB.jpg)
 
-Chrome 擴充功能。覆蓋所有噁心ㄉ「__禿子__」的臉。
+Chrome 擴充功能。運用 AI 神經網路技術進行人臉辨識，覆蓋所有噁心ㄉ「__禿子__」的臉。
 
 使用 _[@justadudewhohacks/face-api.js](https://github.com/justadudewhohacks/face-api.js "face-api.js")_、_SSD Mobilenet V1_。
 
-目前標靶樣本數僅 _60_，若有誤判請多海涵。
+目前標靶樣本數僅約 _60_，若有誤判請多海涵。
 
 請務必打開 __硬體加速__，建議配備 __獨立顯卡__。
 ## 安裝方法
 ### Chrome Web Store
 [傳送門](https://chrome.google.com/webstore/detail/%E7%9C%9F%E2%80%A2%E7%85%9E%E6%B0%A3-%F0%9F%85%90-%E5%89%B2%E8%8D%89%E6%A9%9F%E2%80%A2%E5%8D%8D/pibolmcicpmnbjjjibaioibonjmijfjo)
-### 開發版
+### 手動安裝開發版
 1. 下載 zip 檔
     * [GitHub](https://github.com/nevikw39/Anti-Bold/archive/master.zip "從 GitHub 下載") （最新版）
     * [Google Drive](https://drive.google.com/uc?export=download&id=1rrMlMW4qeablWrtXqguEd0jUsQZ7JqF2 "從 Google Drive 下載")
@@ -31,6 +32,7 @@ Chrome 擴充功能。覆蓋所有噁心ㄉ「__禿子__」的臉。
 5. _Bang!_
 ## 版本歷史
 ### 𝓫𝓮𝓽𝓪
+正式上架後的小修正。
 ### 𝓪𝓵𝓹𝓱𝓪 🅃 🆁 🄸
 * 加入選項
     * 啟用、停用
@@ -45,6 +47,7 @@ Chrome 擴充功能。覆蓋所有噁心ㄉ「__禿子__」的臉。
 ### 𝓪𝓵𝓹𝓱𝓪 🅄 🅽 🄾
 _userscript_ 型態，失敗。
 ## 未來目標
+* 將臉孔描述資料與鑄成是脫鉤，則其更新即不受 Google 影響
 * 統計資料
 * 白名單
 * 影片追蹤
