@@ -6,7 +6,7 @@
 /_/   \_\_| |_|\__|_|     |____/ \___/|_|\__,_|
 ```
 # 真 • 煞氣 🅐 割草機 • 卍
-# 目前 Chrome Web Store 上為舊版，新版正等待審核中，欲搶先享受更流暢體驗，還請麻煩手動安裝。
+# 目前 Chrome Web Store 上仍為舊版，新版正等待審核中，欲搶先享受更流暢體驗，還請麻煩手動安裝。
 ## 𝕬𝖓𝖙𝖎-𝕭𝖔𝖑𝖉 𝓫𝓮𝓽𝓪 ⓜ🅞ⓝ🅞
 [官網](https://www.kevinweng.tk/ab/ "前往官網")
 
@@ -24,7 +24,7 @@ Chrome 擴充功能。運用 AI 神經網路技術進行人臉辨識，覆蓋網
 > 其實此擴充功能核心部分採用現成函式庫，或可算是拾人牙慧吧。雕蟲小技，何足掛齒。
 ## 安裝方法
 ### Chrome Web Store
-[傳送門](https://chrome.google.com/webstore/detail/%E7%9C%9F%E2%80%A2%E7%85%9E%E6%B0%A3-%F0%9F%85%90-%E5%89%B2%E8%8D%89%E6%A9%9F%E2%80%A2%E5%8D%8D/pibolmcicpmnbjjjibaioibonjmijfjo)
+[傳送門](https://chrome.google.com/webstore/detail/pibolmcicpmnbjjjibaioibonjmijfjo)
 ### 手動安裝開發版
 1. 下載 zip 檔
     * [GitHub](https://github.com/nevikw39/Anti-Bold/archive/master.zip "從 GitHub 下載") （最新版）
@@ -35,7 +35,8 @@ Chrome 擴充功能。運用 AI 神經網路技術進行人臉辨識，覆蓋網
 5. _Bang!_
 ## 版本歷史
 ### 𝓫𝓮𝓽𝓪 ⓜ🅞ⓝ🅞
-臉孔特徵資料與主程式分離，故將來加強即不受 Google 審核影響。
+* 臉孔特徵資料與主程式分離，故將來加強即不受 Google 審核影響
+* 加入版本確認機制，未來在審核通過後可提示改用商店版
 ### 𝓫𝓮𝓽𝓪
 正式上架後的小修正。
 ### 𝓪𝓵𝓹𝓱𝓪 🅃 🆁 🄸

@@ -19,9 +19,13 @@
  / ___ \| | | | |_| |_____| |_) | (_) | | (_| |
 /_/   \_\_| |_|\__|_|     |____/ \___/|_|\__,_|</code></pre>
         <h3>真 • 煞氣 🅐 割草機 • 卍</h3>
-    </div>
-    <div class="jumbotron mb-2 mx-2">
-        <div class="card bg-info">
+        <div class="alert alert-dismissible alert-danger d-none" id="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong class="lead">注意！</strong>最新穩定版已在 <a class="alert-link"
+                href="https://chrome.google.com/webstore/detail/pibolmcicpmnbjjjibaioibonjmijfjo">Chrome Web Store</a>
+            發佈。請在更新後保留商店版即可。
+        </div>
+        <div class="card bg-info mb-3">
             <div class="card-body">
                 <div class="custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input" id="enable">
@@ -33,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <div class="card bg-warning">
+        <div class="card bg-warning mb-3">
             <div class="card-body text-center">
                 <button class="btn btn-secondary" id="btn">暫時隱藏所有 canvas</button>
             </div>
