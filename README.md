@@ -16,9 +16,12 @@ Chrome 擴充功能。運用 AI 神經網路技術進行人臉辨識，覆蓋網
 
 使用 _[@justadudewhohacks/face-api.js](https://github.com/justadudewhohacks/face-api.js "face-api.js")_、_SSD Mobilenet V1_。
 
-目前標靶樣本數僅約 _60_，若有誤判請多海涵。
+目前標靶樣本數僅約 _71_、防誤判樣本數僅約 _11_，若有誤判請多海涵。
 
-請務必打開 __硬體加速__，建議配備 __獨立顯卡__。
+請務必打開 __硬體加速__，建議配備 __獨立顯卡__。（有人說現代電腦效能過剩？還不來燒機 R
+
+若欲對原圖片進行操作如另存圖片與以圖搜圖等，請先隱藏 canvas。
+> 其實此擴充功能核心部分採用現成函式庫，或可算是拾人牙慧吧。雕蟲小技，何足掛齒。
 ## 安裝方法
 ### Chrome Web Store
 [傳送門](https://chrome.google.com/webstore/detail/%E7%9C%9F%E2%80%A2%E7%85%9E%E6%B0%A3-%F0%9F%85%90-%E5%89%B2%E8%8D%89%E6%A9%9F%E2%80%A2%E5%8D%8D/pibolmcicpmnbjjjibaioibonjmijfjo)
@@ -41,7 +44,7 @@ Chrome 擴充功能。運用 AI 神經網路技術進行人臉辨識，覆蓋網
     * 僻眼韓黑模式、理性含奮模式
     * 暫時隱藏所有 canvas
 * 加入韓粉模式
-* 效能優化
+* 效能最佳化
     * 改為確認為草包後才插入 _canvas_
     * 從 _MutationObserver_ 換成 _scroll_ 事件
 ### 𝓪𝓵𝓹𝓱𝓪 🅳 🅄 🅾
@@ -49,7 +52,6 @@ Chrome 擴充功能。運用 AI 神經網路技術進行人臉辨識，覆蓋網
 ### 𝓪𝓵𝓹𝓱𝓪 🅄 🅽 🄾
 _userscript_ 型態，失敗。
 ## 未來目標
-* 將臉孔描述資料與鑄成是脫鉤，則其更新即不受 Google 影響
 * 統計資料
 * 白名單
 * 影片追蹤
