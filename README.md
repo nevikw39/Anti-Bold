@@ -6,7 +6,6 @@
 /_/   \_\_| |_|\__|_|     |____/ \___/|_|\__,_|
 ```
 # 真 • 煞氣 🅐 割草機 • 卍
-# 目前 Chrome Web Store 上仍為舊版，新版正等待審核中，欲搶先享受更流暢體驗，還請麻煩手動安裝。
 ## 𝕬𝖓𝖙𝖎-𝕭𝖔𝖑𝖉 𝓫𝓮𝓽𝓪 ⓜ🅞ⓝ🅞
 [官網](https://www.kevinweng.tk/ab/ "前往官網")
 
@@ -16,7 +15,7 @@ Chrome 擴充功能。運用 AI 神經網路技術進行人臉辨識，覆蓋網
 
 使用 _[@justadudewhohacks/face-api.js](https://github.com/justadudewhohacks/face-api.js "face-api.js")_、_SSD Mobilenet V1_。
 
-目前標靶樣本數僅約 _71_、防誤判樣本數僅約 _11_，若有誤判請多海涵。
+目前標靶樣本數僅約 _72_、防誤判樣本數僅約 _11_，若有誤判請多海涵。
 
 請務必打開 __硬體加速__，建議配備 __獨立顯卡__。（有人說現代電腦效能過剩？還不來燒機 R
 
@@ -26,13 +25,13 @@ Chrome 擴充功能。運用 AI 神經網路技術進行人臉辨識，覆蓋網
 ### Chrome Web Store
 [傳送門](https://chrome.google.com/webstore/detail/pibolmcicpmnbjjjibaioibonjmijfjo)
 ### 手動安裝開發版
-1. 下載 zip 檔
-    * [GitHub](https://github.com/nevikw39/Anti-Bold/archive/master.zip "從 GitHub 下載") （最新版）
-    * [Google Drive](https://drive.google.com/uc?export=download&id=1rrMlMW4qeablWrtXqguEd0jUsQZ7JqF2 "從 Google Drive 下載")
+1. 下載 ᴢɪᴩ 檔
+    * [𝑮𝒊𝒕𝑯𝒖𝒃](https://github.com/nevikw39/Anti-Bold/archive/master.zip "從 GitHub 下載") （最新版）
+    * [𝑮𝒐𝒐𝒈𝒍𝒆 𝑫𝒓𝒊𝒗𝒆](https://drive.google.com/uc?export=download&id=1rrMlMW4qeablWrtXqguEd0jUsQZ7JqF2 "從 Google Drive 下載")
 2. 解壓縮至任意目錄
 3. __&nbsp;⋮&nbsp;__ ➡️ 更多工具 ➡️ 擴充功能 ➡️ 開發人員模式
 4. 載入未封裝項目
-5. _Bang!_
+5. _🇧🇦🇳🇬!_
 ## 版本歷史
 ### 𝓫𝓮𝓽𝓪 ⓜ🅞ⓝ🅞
 * 臉孔特徵資料與主程式分離，故將來加強即不受 Google 審核影響
