@@ -8,9 +8,9 @@
             }, 10000);
         }
     });
-    console.log("%c    _          _   _       ____        _     _ \n   / \\   _ __ | |_(_)     | __ )  ___ | | __| |\n  / _ \\ | '_ \\| __| |_____|  _ \\ / _ \\| |/ _` |\n / ___ \\| | | | |_| |_____| |_) | (_) | | (_| |\n/_/   \\_\\_| |_|\\__|_|     |____/ \\___/|_|\\__,_|", "background-color: #198964; color: white; font-weight: bold; /* XD */");
     if (!await new Promise(rs => chrome.storage.sync.get(["enable"], val => rs(val.enable))))
         return;
+    console.log("%c    _          _   _       ____        _     _ \n   / \\   _ __ | |_(_)     | __ )  ___ | | __| |\n  / _ \\ | '_ \\| __| |_____|  _ \\ / _ \\| |/ _` |\n / ___ \\| | | | |_| |_____| |_) | (_) | | (_| |\n/_/   \\_\\_| |_|\\__|_|     |____/ \\___/|_|\\__,_|", "background-color: #198964; color: white; font-weight: bold; /* XD */");
     let b = 0, n = 0;
     const fill = await new Promise(rs => chrome.storage.sync.get(["fill"], val => rs(val.fill)));
     const match = new faceapi.FaceMatcher([
@@ -23,7 +23,8 @@
         faceapi.nets.ssdMobilenetv1.loadFromUri(chrome.runtime.getURL("/models/"))
     ]).then(_ => {
         foo();
-        $(document).scroll(_ => foo());
+        let mo = new MutationObserver(_ => foo());
+        mo.observe(document, { subtree: true, childList: true });
     });
     function foo() {
         $("img").each(async (_, i) => {

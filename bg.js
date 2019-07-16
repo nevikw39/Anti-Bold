@@ -6,6 +6,7 @@ chrome.runtime.onInstalled.addListener(_ => chrome.storage.sync.get(["fill", "en
         fetch("https://www.kevinweng.tk/ab/bold.json").then(r => r.json()).then(j => chrome.storage.local.set({ "bold": j }));
         fetch("https://www.kevinweng.tk/ab/non.json").then(r => r.json()).then(j => chrome.storage.local.set({ "non": j }));
     }
+    chrome.browserAction.setBadgeText({ text: val.enable ? "" : "X" });
     chrome.browserAction.setBadgeBackgroundColor({ color: "#198964" });
     chrome.tabs.create({ url: "https://www.kevinweng.tk/ab/anti-bold.html#ver" });
 }));
