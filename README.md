@@ -19,19 +19,19 @@ Chrome 擴充功能。運用 AI 神經網路技術進行人臉辨識，覆蓋網
 
 請務必打開 __硬體加速__，建議配備 __獨立顯卡__。（有人說現代電腦效能過剩？還不來燒機 R
 
-若欲對原圖片進行操作如另存圖片與以圖搜圖等，請先隱藏 canvas。
+若欲對原圖片進行操作如另存圖片與以圖搜圖等，請先隱藏 _canvas_。
 > 其實此擴充功能核心部分採用現成函式庫，或可算是拾人牙慧吧。雕蟲小技，何足掛齒。
 ## 安裝方法
-### Chrome Web Store
-[傳送門](https://chrome.google.com/webstore/detail/pibolmcicpmnbjjjibaioibonjmijfjo)
-### 手動安裝開發版
+### Chrome Web Store (𝓫𝓮𝓽𝓪)
+[![](https://i.imgur.com/ZZlw58t.jpg)](https://chrome.google.com/webstore/detail/pibolmcicpmnbjjjibaioibonjmijfjo)
+### 手動安裝開發版 (𝓫𝓮𝓽𝓪 ⓜ🅞ⓝ🅞)
 1. 下載 ᴢɪᴩ 檔
     * [𝑮𝒊𝒕𝑯𝒖𝒃](https://github.com/nevikw39/Anti-Bold/archive/master.zip "從 GitHub 下載") （最新版）
     * [𝑮𝒐𝒐𝒈𝒍𝒆 𝑫𝒓𝒊𝒗𝒆](https://drive.google.com/uc?export=download&id=1rrMlMW4qeablWrtXqguEd0jUsQZ7JqF2 "從 Google Drive 下載")
 2. 解壓縮至任意目錄
 3. __&nbsp;⋮&nbsp;__ ➡️ 更多工具 ➡️ 擴充功能 ➡️ 開發人員模式
 4. 載入未封裝項目
-5. _🇧🇦🇳🇬!_
+5. _B🇦🇳🇬!_
 ## 版本歷史
 ### 𝓫𝓮𝓽𝓪 ⓜ🅞ⓝ🅞
 * 臉孔特徵資料與主程式分離，故將來加強即不受 Google 審核影響
