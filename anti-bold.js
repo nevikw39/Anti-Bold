@@ -8,19 +8,23 @@
             }, 10000);
         }
     });
-    if (!await new Promise(rs => chrome.storage.sync.get(["enable"], val => rs(val.enable))))
-        return;
-    console.log("%c    _          _   _       ____        _     _ \n   / \\   _ __ | |_(_)     | __ )  ___ | | __| |\n  / _ \\ | '_ \\| __| |_____|  _ \\ / _ \\| |/ _` |\n / ___ \\| | | | |_| |_____| |_) | (_) | | (_| |\n/_/   \\_\\_| |_|\\__|_|     |____/ \\___/|_|\\__,_|", "background-color: #198964; color: white; font-weight: bold; /* XD */");
     let b = 0, n = 0;
-    const fill = await new Promise(rs => chrome.storage.sync.get(["fill"], val => rs(val.fill)));
+    const model = chrome.runtime.getURL("/models/");
     const match = new faceapi.FaceMatcher([
         ...(await new Promise(rs => chrome.storage.local.get(["bold"], val => rs(val.bold)))).map(i => new faceapi.LabeledFaceDescriptors(`bold ${b++}`, [new Float32Array(i)])),
         ...(await new Promise(rs => chrome.storage.local.get(["non"], val => rs(val.non)))).map(i => new faceapi.LabeledFaceDescriptors(`non ${n++}`, [new Float32Array(i)]))
     ], 0.45);
+    const settings = await new Promise(rs => chrome.storage.sync.get(["fill", "enable", "tiny"], val => rs(val)));
+    const opt = settings.tiny ? new faceapi.TinyFaceDetectorOptions() : new faceapi.SsdMobilenetv1Options();
+    if (!settings.enable)
+        return;
+    console.log("%c    _          _   _       ____        _     _ \n   / \\   _ __ | |_(_)     | __ )  ___ | | __| |\n  / _ \\ | '_ \\| __| |_____|  _ \\ / _ \\| |/ _` |\n / ___ \\| | | | |_| |_____| |_) | (_) | | (_| |\n/_/   \\_\\_| |_|\\__|_|     |____/ \\___/|_|\\__,_|", "background-color: #198964; color: white; font-weight: bold; /* XD */");
     Promise.all([
-        faceapi.nets.faceRecognitionNet.loadFromUri(chrome.runtime.getURL("/models/")),
-        faceapi.nets.faceLandmark68Net.loadFromUri(chrome.runtime.getURL("/models/")),
-        faceapi.nets.ssdMobilenetv1.loadFromUri(chrome.runtime.getURL("/models/"))
+        faceapi.nets.faceRecognitionNet.loadFromUri(model),
+        faceapi.nets.faceLandmark68TinyNet.loadFromUri(model),
+        faceapi.nets.faceLandmark68Net.loadFromUri(model),
+        faceapi.nets.ssdMobilenetv1.loadFromUri(model),
+        faceapi.nets.tinyFaceDetector.loadFromUri(model)
     ]).then(_ => {
         foo();
         let mo = new MutationObserver(_ => foo());
@@ -40,7 +44,7 @@
         const size = { width: j.width(), height: j.height() };
         if (size.width <= 0 || size.height <= 0)
             return;
-        const dts = await faceapi.detectAllFaces(await faceapi.fetchImage(x.src)).withFaceLandmarks().withFaceDescriptors();
+        const dts = await faceapi.detectAllFaces(await faceapi.fetchImage(x.src), opt).withFaceLandmarks(settings.tiny).withFaceDescriptors();
         const rr = faceapi.resizeResults(dts, size);
         x.dataset.anti_bold = "non";
         rr.forEach(i => {
@@ -55,7 +59,7 @@
                 const box = i.detection.box;
                 const ctx = cv.getContext("2d");
                 faceapi.matchDimensions(cv, size);
-                if (fill) {
+                if (settings.fill) {
                     ctx.fillStyle = "#198964";
                     ctx.fillRect(box.x, box.y, box.width, box.height);
                 }

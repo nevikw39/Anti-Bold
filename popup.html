@@ -6,6 +6,7 @@
     <title>Anti-Bold</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="anti-bold.css">
     <link rel="stylesheet" href="bootstrap.min.css" media="screen" id="stylesheet">
     <link rel="icon" type="image/png" href="" />
 </head>
@@ -25,7 +26,7 @@
                 href="https://chrome.google.com/webstore/detail/pibolmcicpmnbjjjibaioibonjmijfjo">Chrome Web Store</a>
             發佈。請在更新後保留商店版即可。
         </div>
-        <div class="card bg-info mb-3">
+        <div class="card bg-gradient-info mb-3">
             <div class="card-body">
                 <div class="custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input" id="enable">
@@ -35,14 +36,20 @@
                     <input type="checkbox" class="custom-control-input" id="fill">
                     <label class="custom-control-label text-white" for="fill" id="fillLB"></label>
                 </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="tiny">
+                    <label class="custom-control-label text-white" for="tiny" id="tinyLB"></label>
+                </div>
             </div>
         </div>
-        <div class="card bg-warning mb-3">
+        <div class="card bg-gradient-danger mb-3">
             <div class="card-body text-center">
-                <button class="btn btn-secondary" id="btn">暫時隱藏所有 canvas</button>
+                <button class="btn btn-warning text-muted mb-3" id="btn">暫時隱藏所有 canvas</button>
+                <p class="card-text text-white">快捷鍵：<kbd>Crtl</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd></p>
             </div>
         </div>
     </div>
+    <dooter><h5 class="text-center" id="ver"></h5></dooter>
     <script src="jquery-3.4.1.min.js"></script>
     <script src="popper.min.js"></script>
     <script src="bootstrap.min.js"></script>
